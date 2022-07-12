@@ -1,0 +1,5 @@
+> salome shell mesh_generator.py
+> ElmerGrid 8 2 mesh.unv
+> python sif_generator_from_code.py
+> ElmerSolver mesh.sif
+> python cap_convert.py

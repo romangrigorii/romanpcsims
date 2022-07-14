@@ -177,49 +177,49 @@ Boundary Condition 8
 End
 
 Boundary Condition 9
-  Target Boundaries(6) = 45 46 47 48 49 50
+  Target Boundaries(8) = 45 46 47 48 49 50 51 52
   Name = "Tx0"
   Capacitance Body = 7
 End
 
 Boundary Condition 10
-  Target Boundaries(6) = 51 52 53 54 55 56
+  Target Boundaries(8) = 53 54 55 56 57 58 59 60
   Name = "Tx1"
   Capacitance Body = 8
 End
 
 Boundary Condition 11
-  Target Boundaries(6) = 57 58 59 60 61 62
+  Target Boundaries(8) = 61 62 63 64 65 66 67 68
   Name = "Tx2"
   Capacitance Body = 9
 End
 
 Boundary Condition 12
-  Target Boundaries(1) = 63 
+  Target Boundaries(1) = 69 
   Name = "Rx0"
   Capacitance Body = 10
 End
 
 Boundary Condition 13
-  Target Boundaries(1) = 64 
+  Target Boundaries(1) = 70 
   Name = "Rx1"
   Capacitance Body = 11
 End
 
 Boundary Condition 14
-  Target Boundaries(1) = 65 
+  Target Boundaries(1) = 71 
   Name = "Rx2"
   Capacitance Body = 12
 End
 
 Boundary Condition 15
-  Target Boundaries(4) = 66 67 68 69
+  Target Boundaries(4) = 72 73 74 75
   Name = "TxIx0"
   Capacitance Body = 13
 End
 
 Boundary Condition 16
-  Target Boundaries(4) = 70 71 72 73
+  Target Boundaries(4) = 76 77 78 79
   Name = "TxIx1"
   Capacitance Body = 14
 End

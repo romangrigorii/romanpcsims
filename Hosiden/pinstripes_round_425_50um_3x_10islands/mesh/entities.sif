@@ -249,54 +249,78 @@ Boundary Condition 56
 End
 
 Boundary Condition 57
-  Name = Rx0
+  Name = Tx18
 End
 
 Boundary Condition 58
-  Name = Rx1
+  Name = Tx19
 End
 
 Boundary Condition 59
-  Name = Rx2
+  Name = Tx20
 End
 
 Boundary Condition 60
-  Name = TxIx0
+  Name = Tx21
 End
 
 Boundary Condition 61
-  Name = TxIx1
+  Name = Tx22
 End
 
 Boundary Condition 62
-  Name = TxIx2
+  Name = Tx23
 End
 
 Boundary Condition 63
-  Name = TxIx3
+  Name = Rx0
 End
 
 Boundary Condition 64
-  Name = TxIx4
+  Name = Rx1
 End
 
 Boundary Condition 65
-  Name = TxIx5
+  Name = Rx2
 End
 
 Boundary Condition 66
-  Name = TxIx6
+  Name = TxIx0
 End
 
 Boundary Condition 67
-  Name = TxIx7
+  Name = TxIx1
 End
 
 Boundary Condition 68
-  Name = bnry74
+  Name = TxIx2
 End
 
 Boundary Condition 69
-  Name = bnry75
+  Name = TxIx3
+End
+
+Boundary Condition 70
+  Name = TxIx4
+End
+
+Boundary Condition 71
+  Name = TxIx5
+End
+
+Boundary Condition 72
+  Name = TxIx6
+End
+
+Boundary Condition 73
+  Name = TxIx7
+End
+
+Boundary Condition 74
+  Name = bnry80
+End
+
+Boundary Condition 75
+  Name = bnry81
 End
 

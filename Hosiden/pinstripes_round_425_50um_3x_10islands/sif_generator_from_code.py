@@ -211,7 +211,7 @@ End
         iin += 1
         cb +=1
 
-    txc = [6,6,6]
+    txc = [8,8,8]
 
     for h in range(hor*3):
         bounds = ""

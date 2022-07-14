@@ -139,8 +139,8 @@ Material 2
 End
 
 Material 3
-  Name = "PVB"
-  Relative Permittivity = 2.5
+  Name = "VHB"
+  Relative Permittivity = 2.28
 End
 
 Material 4
@@ -173,7 +173,7 @@ End
     iin = 0;
     cb = 1;
 
-    hxc = [13,4,13];
+    hxc = [1,1,1];
 
     for h in range(hor*3):
         bounds = ""
@@ -194,7 +194,7 @@ End
     bound_o = bound
     bound += (hor-1)*3 + 2
 
-    iixc = [6,15,6]
+    iixc = [10,10,10]
 
     for h in range(hor*3):
         bounds = ""
@@ -211,7 +211,7 @@ End
         iin += 1
         cb +=1
 
-    txc = [10,8,10]
+    txc = [6,6,6]
 
     for h in range(hor*3):
         bounds = ""
@@ -244,30 +244,35 @@ End
 
     ## Adding Tx Ix islands in one cap body
 
-    bounds = ""
-    for i in range(8):
-        bounds += " " + str(bound)
-        bound += 1
+    for h in range(2):
+        bounds = ""
+        for i in range(4):
+            bounds += " " + str(bound)
+            bound += 1
 
-    fw.write("Boundary Condition " + str(bc) + "\n")
-    fw.write("  Target Boundaries(8) =" + bounds + "\n")
-    fw.write("  Name = TxIx0\n")
-    fw.write("  Capacitance Body = " + str(cb) + "\n")
-    fw.write("End\n\n")
-
-    bc += 1
-    cb +=1
+        fw.write("Boundary Condition " + str(bc) + "\n")
+        fw.write("  Target Boundaries(4) =" + bounds + "\n")
+        fw.write("  Name = \"TxIx" + str(h) + "\"" + "\n")
+        fw.write("  Capacitance Body = " + str(cb) + "\n")
+        fw.write("End\n\n")
+        bc += 1
+        cb +=1
 
     ## Adding Hx Ix islands in one cap body
 
-    bounds = ""
+
     for i in range(2):
+        bounds = ""
         bounds += " " + str(bound_o)
         bound_o += 1
 
-    fw.write("Boundary Condition " + str(bc) + "\n")
-    fw.write("  Target Boundaries(2) = " + bounds + "\n")
-    fw.write("  Name = \"Ix0\"\n")
-    fw.write("  Capacitance Body = " + str(cb) + "\n")
-    fw.write("End\n\n")
+        fw.write("Boundary Condition " + str(bc) + "\n")
+        fw.write("  Target Boundaries(1) = " + bounds + "\n")
+        fw.write("  Name = \"Ix" + str(i) + "\"" + "\n")
+        fw.write("  Capacitance Body = " + str(cb) + "\n")
+        fw.write("End\n\n")
+
+        bc += 1
+        cb +=1
+
     fw.close()

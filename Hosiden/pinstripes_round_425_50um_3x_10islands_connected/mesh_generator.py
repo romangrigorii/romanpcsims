@@ -75,35 +75,42 @@ for v in range(3):
         TxIxlist.append(geompy.MakeTranslation(TxIxlist[-2],0,step_h,0))
 
 # IIX
-
-base = geompy.MakeFaceHW(d_island, 3*step_h - d_island*5, 1)
-base = geompy.MakeTranslation(base,0,step_h*3/2,d_glass)
+IIXm = [-.5,1,-2,2,1,-2,2,-1,0]
 IIxlist = [];
-for i in range(inum):
-    base = geompy.MakeTranslation(base, i_d, 0, 0)
-    IIxlist.append(base)
-
-IIx = geompy.MakeFuseList(IIxlist, True, True)
-IIxlist = [IIx]
-
-for i in range(2):
-    IIxlist.append(geompy.MakeTranslation(IIxlist[-1],step_w,0,0))
+for k in range(3):
+    IIxlistt = [];
+    base = geompy.MakeFaceHW(d_island, 3*step_h - d_island*5, 1)
+    base = geompy.MakeTranslation(base,step_w*k,step_h*3/2,d_glass)
+    base2 = geompy.MakeFaceHW(i_d, d_island, 1)
+    base2 = geompy.MakeTranslation(base2,step_w*k,step_h*(1/2+k),d_glass)
+    for i in range(inum):
+        base = geompy.MakeTranslation(base, i_d, 0, 0)
+        IIxlistt.append(base)
+    for i in range(len(IIXm)):
+        base = geompy.MakeTranslation(base2, i_d*(i+1.5), IIXm[i]*i_d, 0)
+        IIxlistt.append(base)
+    IIxlist.append(geompy.MakeFuseList(IIxlistt, True, True))
 
 print(len(IIxlist))
 
 ### create new Hx
 
-Hxlist_i = [];
+IIXm = [-.5,1,-2,2,1,-2,2,-1,0]
 IIxlist_d = [];
-base = geompy.MakeFaceHW(d_island + 2*delet, 3*step_h - d_island*5 + 2*delet, 1)
-base = geompy.MakeTranslation(base,0,step_h*3/2,d_glass)
-for i in range(inum):
-    base = geompy.MakeTranslation(base, i_d, 0, 0)
-    IIxlist_d.append(base)
-IIx = geompy.MakeFuseList(IIxlist_d, True, True)
-IIxlist_d = [IIx]
-for i in range(2):
-    IIxlist_d.append(geompy.MakeTranslation(IIxlist_d[-1],step_w,0,0))
+Hxlist_i = [];
+for k in range(3):
+    IIxlistt = [];
+    base = geompy.MakeFaceHW(d_island + 2*delet, 3*step_h - d_island*5 + 2*delet, 1)
+    base = geompy.MakeTranslation(base,step_w*k,step_h*3/2,d_glass)
+    base2 = geompy.MakeFaceHW(i_d + 2*delet, d_island + 2*delet, 1)
+    base2 = geompy.MakeTranslation(base2,step_w*k,step_h*(1/2+k),d_glass)
+    for i in range(inum):
+        base = geompy.MakeTranslation(base, i_d, 0, 0)
+        IIxlistt.append(base)
+    for i in range(len(IIXm)):
+        base = geompy.MakeTranslation(base2, i_d*(i+1.5), IIXm[i]*i_d, 0)
+        IIxlistt.append(base)
+    IIxlist_d.append(geompy.MakeFuseList(IIxlistt, True, True))
 
 for h in range(3):
     Hxlist_i.append(geompy.MakeCut(Hxlist[h], IIxlist_d[h], True))
@@ -303,7 +310,11 @@ for i in range(len(faces1)):
         face1_indexes_Ix.append(i)
         face1_names_Ix.append('Ix' + str(ixi))
         ixi+=1
-    elif (np.abs(xmi - xma) < d_island*1.05) and (np.abs(xmi - xma) > d_island*.95):
+    # elif (np.abs(xmi - xma) < d_island*1.05) and (np.abs(xmi - xma) > d_island*.95):
+    #     face1_indexes_IIx.append(i)
+    #     face1_names_IIx.append('IIx' + str(iixi))
+    #     iixi+=1
+    elif (np.abs(xmi - xma) < (d_island + 9*i_d)*1.01) and (np.abs(xmi - xma) > (-d_island + 9*i_d)*.99):
         face1_indexes_IIx.append(i)
         face1_names_IIx.append('IIx' + str(iixi))
         iixi+=1

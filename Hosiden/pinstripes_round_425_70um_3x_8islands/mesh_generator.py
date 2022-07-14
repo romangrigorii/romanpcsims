@@ -17,6 +17,7 @@ import numpy as np
 geompy = geomBuilder.New()
 
 d_island = 0.07
+d_island_i = 0.05
 delet = 0.03
 step = 4.25
 Rx_trunk = 0.2
@@ -25,8 +26,8 @@ step_w = step
 step_h = step/2
 i_d = step/(inum)
 
-cell_w_Hx = step_w - 2*delet - d_island
-cell_w_Tx = step_w - 2*delet - d_island
+cell_w_Hx = step_w - 2*delet - d_island_i
+cell_w_Tx = step_w - 2*delet - d_island_i
 
 d_air = 5
 d_glass = 0.4
@@ -58,7 +59,7 @@ Hxlist = [Hx0,Hx1,Hx2]
 
 # IX
 
-gen_i = geompy.MakeFaceHW(d_island, 3*step_h, 1)
+gen_i = geompy.MakeFaceHW(d_island_i, 3*step_h, 1)
 Ix0 = geompy.MakeTranslation(gen_i,step_w, 3*step_h/2, d_glass)
 Ix1 = geompy.MakeTranslation(Ix0,step_w, 0, 0)
 
@@ -66,7 +67,7 @@ Ixlist = [Ix0, Ix1];
 
 # TXIX
 
-gen_i = geompy.MakeFaceHW(d_island, step_h - Rx_trunk - delet*2, 1)
+gen_i = geompy.MakeFaceHW(d_island_i, step_h - Rx_trunk - delet*2, 1)
 TxIx0 = geompy.MakeTranslation(gen_i,step_w, 0, 0)
 TxIx1 = geompy.MakeTranslation(gen_i,step_w*2, 0, 0)
 TxIxlist = [TxIx0, TxIx1];
@@ -299,7 +300,7 @@ iixi = 0;
 ixi = 0;
 for i in range(len(faces1)):
     [xmi,xma,ymi,yma,zmi,zma] = geompy.BoundingBox(faces1[i])
-    if (np.abs(xmi-xma)< d_island*1.05) and (np.abs(xmi-xma) > d_island*.95) and np.abs(ymi - yma)>(step_h*3 - delet):
+    if (np.abs(xmi-xma)< d_island_i*1.05) and (np.abs(xmi-xma) > d_island_i*.95) and np.abs(ymi - yma)>(step_h*3 - delet):
         face1_indexes_Ix.append(i)
         face1_names_Ix.append('Ix' + str(ixi))
         ixi+=1

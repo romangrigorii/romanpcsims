@@ -194,7 +194,7 @@ End
     bound_o = bound
     bound += (hor-1)*3 + 2
 
-    iixc = [10,10,10]
+    iixc = [1,1,1]
 
     for h in range(hor*3):
         bounds = ""
@@ -211,7 +211,7 @@ End
         iin += 1
         cb +=1
 
-    txc = [6,6,6]
+    txc = [8,8,8]
 
     for h in range(hor*3):
         bounds = ""

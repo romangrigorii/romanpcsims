@@ -343,7 +343,7 @@ iixi = 0;
 ixi = 0;
 for i in range(len(faces1)):
     [xmi,xma,ymi,yma,zmi,zma] = geompy.BoundingBox(faces1[i])
-    if (np.abs(xmi-xma)< d_island*1.05) and (np.abs(xmi-xma) > d_island*.95):
+    if (np.abs(xmi-xma)< d_island_i*1.05) and (np.abs(xmi-xma) > d_island_i*.95):
             face1_indexes_Ix.append(i)
             face1_names_Ix.append('Ix' + str(ixi))
             ixi+=1
@@ -428,109 +428,109 @@ for i in range(len(face2_names)):
 
 #### create mesh groups
 
-# smesh = smeshBuilder.New()
-# Mesh_1 = smesh.Mesh(partition)
-# NETGEN_1D_2D_3D = Mesh_1.Tetrahedron(algo=smeshBuilder.NETGEN_1D2D3D)
-# NETGEN_3D_Parameters_1 = NETGEN_1D_2D_3D.Parameters()
-# NETGEN_3D_Parameters_1.SetMaxSize( 1 )
-# NETGEN_3D_Parameters_1.SetMinSize( .005 )
-# NETGEN_3D_Parameters_1.SetSecondOrder( 0 )
-# NETGEN_3D_Parameters_1.SetOptimize( 1 )
-# NETGEN_3D_Parameters_1.SetFineness( 4 )
-# NETGEN_3D_Parameters_1.SetChordalError( -1 )
-# NETGEN_3D_Parameters_1.SetChordalErrorEnabled( 0 )
-# NETGEN_3D_Parameters_1.SetUseSurfaceCurvature( 1 )
-# NETGEN_3D_Parameters_1.SetFuseEdges( 1 )
-# NETGEN_3D_Parameters_1.SetQuadAllowed( 0 )
-# NETGEN_3D_Parameters_1.SetCheckChartBoundary( 208 )
+smesh = smeshBuilder.New()
+Mesh_1 = smesh.Mesh(partition)
+NETGEN_1D_2D_3D = Mesh_1.Tetrahedron(algo=smeshBuilder.NETGEN_1D2D3D)
+NETGEN_3D_Parameters_1 = NETGEN_1D_2D_3D.Parameters()
+NETGEN_3D_Parameters_1.SetMaxSize( 1 )
+NETGEN_3D_Parameters_1.SetMinSize( .005 )
+NETGEN_3D_Parameters_1.SetSecondOrder( 0 )
+NETGEN_3D_Parameters_1.SetOptimize( 1 )
+NETGEN_3D_Parameters_1.SetFineness( 4 )
+NETGEN_3D_Parameters_1.SetChordalError( -1 )
+NETGEN_3D_Parameters_1.SetChordalErrorEnabled( 0 )
+NETGEN_3D_Parameters_1.SetUseSurfaceCurvature( 1 )
+NETGEN_3D_Parameters_1.SetFuseEdges( 1 )
+NETGEN_3D_Parameters_1.SetQuadAllowed( 0 )
+NETGEN_3D_Parameters_1.SetCheckChartBoundary( 208 )
+
+NETGEN_1D_2D_1 = Mesh_1.Triangle(algo=smeshBuilder.NETGEN_1D2D,geom=face_group0)
+NETGEN_2D_Parameters_1 = NETGEN_1D_2D_1.Parameters()
+NETGEN_2D_Parameters_1.SetMaxSize( 1)
+NETGEN_2D_Parameters_1.SetMinSize( .005 )
+NETGEN_2D_Parameters_1.SetSecondOrder( 0 )
+NETGEN_2D_Parameters_1.SetOptimize( 1 )
+NETGEN_2D_Parameters_1.SetFineness( 4 )
+NETGEN_2D_Parameters_1.SetChordalError( -1 )
+NETGEN_2D_Parameters_1.SetChordalErrorEnabled( 0 )
+NETGEN_2D_Parameters_1.SetUseSurfaceCurvature( 1 )
+NETGEN_2D_Parameters_1.SetFuseEdges( 1 )
+NETGEN_2D_Parameters_1.SetWorstElemMeasure( 0 )
+NETGEN_2D_Parameters_1.SetUseDelauney( 109 )
+NETGEN_2D_Parameters_1.SetQuadAllowed( 0 )
+NETGEN_2D_Parameters_1.SetCheckChartBoundary( 192 )
+
+NETGEN_1D_2D_2 = Mesh_1.Triangle(algo=smeshBuilder.NETGEN_1D2D,geom=face_group1)
+NETGEN_2D_Parameters_2 = NETGEN_1D_2D_2.Parameters()
+NETGEN_2D_Parameters_2.SetMaxSize( 1)
+NETGEN_2D_Parameters_2.SetMinSize( .005 )
+NETGEN_2D_Parameters_2.SetSecondOrder( 0 )
+NETGEN_2D_Parameters_2.SetOptimize( 1 )
+NETGEN_2D_Parameters_2.SetFineness( 4 )
+NETGEN_2D_Parameters_2.SetChordalError( -1 )
+NETGEN_2D_Parameters_2.SetChordalErrorEnabled( 0 )
+NETGEN_2D_Parameters_2.SetUseSurfaceCurvature( 1 )
+NETGEN_2D_Parameters_2.SetFuseEdges( 1 )
+NETGEN_2D_Parameters_2.SetWorstElemMeasure( 0 )
+NETGEN_2D_Parameters_2.SetUseDelauney( 109 )
+NETGEN_2D_Parameters_2.SetQuadAllowed( 0 )
+NETGEN_2D_Parameters_2.SetCheckChartBoundary( 192 )
+
+NETGEN_1D_2D_3 = Mesh_1.Triangle(algo=smeshBuilder.NETGEN_1D2D,geom=face_group2)
+NETGEN_2D_Parameters_3 = NETGEN_1D_2D_3.Parameters()
+NETGEN_2D_Parameters_3.SetMaxSize( 1 )
+NETGEN_2D_Parameters_3.SetMinSize( .005 )
+NETGEN_2D_Parameters_3.SetSecondOrder( 0 )
+NETGEN_2D_Parameters_3.SetOptimize( 1 )
+NETGEN_2D_Parameters_3.SetFineness( 4 )
+NETGEN_2D_Parameters_3.SetChordalError( -1 )
+NETGEN_2D_Parameters_3.SetChordalErrorEnabled( 0 )
+NETGEN_2D_Parameters_3.SetUseSurfaceCurvature( 1 )
+NETGEN_2D_Parameters_3.SetFuseEdges( 1 )
+NETGEN_2D_Parameters_3.SetWorstElemMeasure( 0 )
+NETGEN_2D_Parameters_3.SetUseDelauney( 109 )
+NETGEN_2D_Parameters_3.SetQuadAllowed( 0 )
+NETGEN_2D_Parameters_3.SetCheckChartBoundary( 192 )
+
+isDone = Mesh_1.Compute()
+Sub_mesh_1 = NETGEN_1D_2D_1.GetSubMesh()
+Sub_mesh_2 = NETGEN_1D_2D_2.GetSubMesh()
+Sub_mesh_3 = NETGEN_1D_2D_3.GetSubMesh()
+
 #
-# NETGEN_1D_2D_1 = Mesh_1.Triangle(algo=smeshBuilder.NETGEN_1D2D,geom=face_group0)
-# NETGEN_2D_Parameters_1 = NETGEN_1D_2D_1.Parameters()
-# NETGEN_2D_Parameters_1.SetMaxSize( 1)
-# NETGEN_2D_Parameters_1.SetMinSize( .005 )
-# NETGEN_2D_Parameters_1.SetSecondOrder( 0 )
-# NETGEN_2D_Parameters_1.SetOptimize( 1 )
-# NETGEN_2D_Parameters_1.SetFineness( 4 )
-# NETGEN_2D_Parameters_1.SetChordalError( -1 )
-# NETGEN_2D_Parameters_1.SetChordalErrorEnabled( 0 )
-# NETGEN_2D_Parameters_1.SetUseSurfaceCurvature( 1 )
-# NETGEN_2D_Parameters_1.SetFuseEdges( 1 )
-# NETGEN_2D_Parameters_1.SetWorstElemMeasure( 0 )
-# NETGEN_2D_Parameters_1.SetUseDelauney( 109 )
-# NETGEN_2D_Parameters_1.SetQuadAllowed( 0 )
-# NETGEN_2D_Parameters_1.SetCheckChartBoundary( 192 )
-#
-# NETGEN_1D_2D_2 = Mesh_1.Triangle(algo=smeshBuilder.NETGEN_1D2D,geom=face_group1)
-# NETGEN_2D_Parameters_2 = NETGEN_1D_2D_2.Parameters()
-# NETGEN_2D_Parameters_2.SetMaxSize( 1)
-# NETGEN_2D_Parameters_2.SetMinSize( .005 )
-# NETGEN_2D_Parameters_2.SetSecondOrder( 0 )
-# NETGEN_2D_Parameters_2.SetOptimize( 1 )
-# NETGEN_2D_Parameters_2.SetFineness( 4 )
-# NETGEN_2D_Parameters_2.SetChordalError( -1 )
-# NETGEN_2D_Parameters_2.SetChordalErrorEnabled( 0 )
-# NETGEN_2D_Parameters_2.SetUseSurfaceCurvature( 1 )
-# NETGEN_2D_Parameters_2.SetFuseEdges( 1 )
-# NETGEN_2D_Parameters_2.SetWorstElemMeasure( 0 )
-# NETGEN_2D_Parameters_2.SetUseDelauney( 109 )
-# NETGEN_2D_Parameters_2.SetQuadAllowed( 0 )
-# NETGEN_2D_Parameters_2.SetCheckChartBoundary( 192 )
-#
-# NETGEN_1D_2D_3 = Mesh_1.Triangle(algo=smeshBuilder.NETGEN_1D2D,geom=face_group2)
-# NETGEN_2D_Parameters_3 = NETGEN_1D_2D_3.Parameters()
-# NETGEN_2D_Parameters_3.SetMaxSize( 1 )
-# NETGEN_2D_Parameters_3.SetMinSize( .005 )
-# NETGEN_2D_Parameters_3.SetSecondOrder( 0 )
-# NETGEN_2D_Parameters_3.SetOptimize( 1 )
-# NETGEN_2D_Parameters_3.SetFineness( 4 )
-# NETGEN_2D_Parameters_3.SetChordalError( -1 )
-# NETGEN_2D_Parameters_3.SetChordalErrorEnabled( 0 )
-# NETGEN_2D_Parameters_3.SetUseSurfaceCurvature( 1 )
-# NETGEN_2D_Parameters_3.SetFuseEdges( 1 )
-# NETGEN_2D_Parameters_3.SetWorstElemMeasure( 0 )
-# NETGEN_2D_Parameters_3.SetUseDelauney( 109 )
-# NETGEN_2D_Parameters_3.SetQuadAllowed( 0 )
-# NETGEN_2D_Parameters_3.SetCheckChartBoundary( 192 )
-#
-# isDone = Mesh_1.Compute()
-# Sub_mesh_1 = NETGEN_1D_2D_1.GetSubMesh()
-# Sub_mesh_2 = NETGEN_1D_2D_2.GetSubMesh()
-# Sub_mesh_3 = NETGEN_1D_2D_3.GetSubMesh()
-#
-# #
-# airb1 = Mesh_1.GroupOnGeom(airb, 'airb', SMESH.VOLUME)
-# airt1 = Mesh_1.GroupOnGeom(airt, 'airt', SMESH.VOLUME)
-# OCA1 = Mesh_1.GroupOnGeom(OCA, 'OCA', SMESH.VOLUME)
-# spine1 = Mesh_1.GroupOnGeom(spine, 'spine', SMESH.VOLUME)
-# VHB1 = Mesh_1.GroupOnGeom(VHB, 'VHB', SMESH.VOLUME)
-# glass1 = Mesh_1.GroupOnGeom(glass, 'glass', SMESH.VOLUME)
-#
-# all_faces = [];
-#
-# for i in range(len(face0_names)):
-#     all_faces.append(Mesh_1.GroupOnGeom(faces0[i], face0_names[i], SMESH.FACE))
-# for i in range(len(face1_names)):
-#     all_faces.append(Mesh_1.GroupOnGeom(faces1_new[i], face1_names[i], SMESH.FACE))
-# for i in range(len(face2_names)):
-#     all_faces.append(Mesh_1.GroupOnGeom(faces2_new[i], face2_names[i], SMESH.FACE))
-#
-# Mesh_1.ExportUNV('mesh.unv')
-#
-# Groups = Mesh_1.GetGroups()
-#
-# smesh.SetName(NETGEN_1D_2D_3D, 'NETGEN 1D-2D-3D')
-# smesh.SetName(NETGEN_3D_Parameters_1, 'NETGEN 3D Parameters_1')
-# smesh.SetName(NETGEN_1D_2D_1, 'NETGEN 1D-2D-1')
-# smesh.SetName(NETGEN_2D_Parameters_1, 'NETGEN 3D Parameters_1')
-# smesh.SetName(NETGEN_1D_2D_2, 'NETGEN 1D-2D-2')
-# smesh.SetName(NETGEN_2D_Parameters_2, 'NETGEN 3D Parameters_2')
-# smesh.SetName(NETGEN_1D_2D_3, 'NETGEN 1D-2D-3')
-# smesh.SetName(NETGEN_2D_Parameters_3, 'NETGEN 3D Parameters_3')
-#
-# for i in range(6):
-#     smesh.SetName(Groups[i],'Solid_' + str(i))
-# for i in range(6,len(Groups)):
-#     smesh.SetName(Groups[i],'Face_' + str(i-6))
-#
-# if salome.sg.hasDesktop():
-#   salome.sg.updateObjBrowser()
+airb1 = Mesh_1.GroupOnGeom(airb, 'airb', SMESH.VOLUME)
+airt1 = Mesh_1.GroupOnGeom(airt, 'airt', SMESH.VOLUME)
+OCA1 = Mesh_1.GroupOnGeom(OCA, 'OCA', SMESH.VOLUME)
+spine1 = Mesh_1.GroupOnGeom(spine, 'spine', SMESH.VOLUME)
+VHB1 = Mesh_1.GroupOnGeom(VHB, 'VHB', SMESH.VOLUME)
+glass1 = Mesh_1.GroupOnGeom(glass, 'glass', SMESH.VOLUME)
+
+all_faces = [];
+
+for i in range(len(face0_names)):
+    all_faces.append(Mesh_1.GroupOnGeom(faces0[i], face0_names[i], SMESH.FACE))
+for i in range(len(face1_names)):
+    all_faces.append(Mesh_1.GroupOnGeom(faces1_new[i], face1_names[i], SMESH.FACE))
+for i in range(len(face2_names)):
+    all_faces.append(Mesh_1.GroupOnGeom(faces2_new[i], face2_names[i], SMESH.FACE))
+
+Mesh_1.ExportUNV('mesh.unv')
+
+Groups = Mesh_1.GetGroups()
+
+smesh.SetName(NETGEN_1D_2D_3D, 'NETGEN 1D-2D-3D')
+smesh.SetName(NETGEN_3D_Parameters_1, 'NETGEN 3D Parameters_1')
+smesh.SetName(NETGEN_1D_2D_1, 'NETGEN 1D-2D-1')
+smesh.SetName(NETGEN_2D_Parameters_1, 'NETGEN 3D Parameters_1')
+smesh.SetName(NETGEN_1D_2D_2, 'NETGEN 1D-2D-2')
+smesh.SetName(NETGEN_2D_Parameters_2, 'NETGEN 3D Parameters_2')
+smesh.SetName(NETGEN_1D_2D_3, 'NETGEN 1D-2D-3')
+smesh.SetName(NETGEN_2D_Parameters_3, 'NETGEN 3D Parameters_3')
+
+for i in range(6):
+    smesh.SetName(Groups[i],'Solid_' + str(i))
+for i in range(6,len(Groups)):
+    smesh.SetName(Groups[i],'Face_' + str(i-6))
+
+if salome.sg.hasDesktop():
+  salome.sg.updateObjBrowser()

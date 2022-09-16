@@ -1,0 +1,1 @@
+This simulation investgated the additional capacitance that is generated between in plane entities sitting atop of high dialectric when there is no conduction body positioned sbov them versus when there is. The conductive body is meant to simulate a contacting fingertip. 

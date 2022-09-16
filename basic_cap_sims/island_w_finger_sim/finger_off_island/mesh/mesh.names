@@ -1,0 +1,13 @@
+! ----- names for bodies -----
+$ air_bot = 1
+$ air_top = 2
+$ glass = 3
+! ----- names for boundaries -----
+$ left_C = 4
+$ airb = 5
+$ GND = 6
+$ island = 7
+$ airt = 8
+$ right_C = 9
+$ bnry10 = 10
+$ bnry11 = 11

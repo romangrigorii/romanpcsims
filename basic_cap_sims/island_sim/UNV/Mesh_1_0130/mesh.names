@@ -1,0 +1,16 @@
+! ----- names for bodies -----
+$ airb = 1
+$ airt = 2
+$ OCA = 3
+$ spine = 4
+$ PVB = 5
+$ glass = 6
+! ----- names for boundaries -----
+$ airb_face = 7
+$ GND_face = 8
+$ airt_face = 9
+$ left = 10
+$ island = 11
+$ right = 12
+$ bnry13 = 13
+$ bnry14 = 14

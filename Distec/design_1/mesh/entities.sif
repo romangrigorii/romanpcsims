@@ -1,0 +1,298 @@
+!------ Skeleton for body section -----
+Body 1
+  Name = airb
+End
+
+Body 2
+  Name = airt
+End
+
+Body 3
+  Name = OCA
+End
+
+Body 4
+  Name = spine
+End
+
+Body 5
+  Name = PVB
+End
+
+Body 6
+  Name = sensor
+End
+
+!------ Skeleton for boundary section -----
+Boundary Condition 1
+  Name = airb_face
+End
+
+Boundary Condition 2
+  Name = GND_face
+End
+
+Boundary Condition 3
+  Name = airt_face
+End
+
+Boundary Condition 4
+  Name = Hx0
+End
+
+Boundary Condition 5
+  Name = Hx1
+End
+
+Boundary Condition 6
+  Name = Hx2
+End
+
+Boundary Condition 7
+  Name = Hx3
+End
+
+Boundary Condition 8
+  Name = Hx4
+End
+
+Boundary Condition 9
+  Name = Hx5
+End
+
+Boundary Condition 10
+  Name = Ix0
+End
+
+Boundary Condition 11
+  Name = Ix1
+End
+
+Boundary Condition 12
+  Name = Ix2
+End
+
+Boundary Condition 13
+  Name = Ix3
+End
+
+Boundary Condition 14
+  Name = Ix4
+End
+
+Boundary Condition 15
+  Name = Ix5
+End
+
+Boundary Condition 16
+  Name = Ix6
+End
+
+Boundary Condition 17
+  Name = Ix7
+End
+
+Boundary Condition 18
+  Name = Ix8
+End
+
+Boundary Condition 19
+  Name = Ix9
+End
+
+Boundary Condition 20
+  Name = Ix10
+End
+
+Boundary Condition 21
+  Name = Ix11
+End
+
+Boundary Condition 22
+  Name = Ix12
+End
+
+Boundary Condition 23
+  Name = Ix13
+End
+
+Boundary Condition 24
+  Name = Ix14
+End
+
+Boundary Condition 25
+  Name = Ix15
+End
+
+Boundary Condition 26
+  Name = Ix16
+End
+
+Boundary Condition 27
+  Name = Ix17
+End
+
+Boundary Condition 28
+  Name = IIx0
+End
+
+Boundary Condition 29
+  Name = IIx1
+End
+
+Boundary Condition 30
+  Name = IIx2
+End
+
+Boundary Condition 31
+  Name = IIx3
+End
+
+Boundary Condition 32
+  Name = IIx4
+End
+
+Boundary Condition 33
+  Name = IIx5
+End
+
+Boundary Condition 34
+  Name = IIx6
+End
+
+Boundary Condition 35
+  Name = IIx7
+End
+
+Boundary Condition 36
+  Name = IIx8
+End
+
+Boundary Condition 37
+  Name = IIx9
+End
+
+Boundary Condition 38
+  Name = IIx10
+End
+
+Boundary Condition 39
+  Name = IIx11
+End
+
+Boundary Condition 40
+  Name = IIx12
+End
+
+Boundary Condition 41
+  Name = IIx13
+End
+
+Boundary Condition 42
+  Name = IIx14
+End
+
+Boundary Condition 43
+  Name = IIx15
+End
+
+Boundary Condition 44
+  Name = IIx16
+End
+
+Boundary Condition 45
+  Name = IIx17
+End
+
+Boundary Condition 46
+  Name = Tx0
+End
+
+Boundary Condition 47
+  Name = Tx1
+End
+
+Boundary Condition 48
+  Name = Tx2
+End
+
+Boundary Condition 49
+  Name = Tx3
+End
+
+Boundary Condition 50
+  Name = Tx4
+End
+
+Boundary Condition 51
+  Name = Tx5
+End
+
+Boundary Condition 52
+  Name = Tx6
+End
+
+Boundary Condition 53
+  Name = Tx7
+End
+
+Boundary Condition 54
+  Name = Tx8
+End
+
+Boundary Condition 55
+  Name = Tx9
+End
+
+Boundary Condition 56
+  Name = Tx10
+End
+
+Boundary Condition 57
+  Name = Tx11
+End
+
+Boundary Condition 58
+  Name = Tx12
+End
+
+Boundary Condition 59
+  Name = Tx13
+End
+
+Boundary Condition 60
+  Name = Tx14
+End
+
+Boundary Condition 61
+  Name = Rx0
+End
+
+Boundary Condition 62
+  Name = Rx1
+End
+
+Boundary Condition 63
+  Name = Rx2
+End
+
+Boundary Condition 64
+  Name = Rx3
+End
+
+Boundary Condition 65
+  Name = Rx4
+End
+
+Boundary Condition 66
+  Name = Rx5
+End
+
+Boundary Condition 67
+  Name = bnry73
+End
+
+Boundary Condition 68
+  Name = bnry74
+End
+

@@ -1,0 +1,46 @@
+!------ Skeleton for body section -----
+Body 1
+  Name = air_bot
+End
+
+Body 2
+  Name = air_top
+End
+
+Body 3
+  Name = glass
+End
+
+!------ Skeleton for boundary section -----
+Boundary Condition 1
+  Name = left_C
+End
+
+Boundary Condition 2
+  Name = airb
+End
+
+Boundary Condition 3
+  Name = GND
+End
+
+Boundary Condition 4
+  Name = island
+End
+
+Boundary Condition 5
+  Name = airt
+End
+
+Boundary Condition 6
+  Name = right_C
+End
+
+Boundary Condition 7
+  Name = bnry10
+End
+
+Boundary Condition 8
+  Name = bnry11
+End
+

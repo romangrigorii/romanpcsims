@@ -1,0 +1,98 @@
+!------ Skeleton for body section -----
+Body 1
+  Name = airb
+End
+
+Body 2
+  Name = airt
+End
+
+Body 3
+  Name = OCA
+End
+
+Body 4
+  Name = spine
+End
+
+Body 5
+  Name = PVB
+End
+
+Body 6
+  Name = glass
+End
+
+!------ Skeleton for boundary section -----
+Boundary Condition 1
+  Name = airb_face
+End
+
+Boundary Condition 2
+  Name = GND_face
+End
+
+Boundary Condition 3
+  Name = airt_face
+End
+
+Boundary Condition 4
+  Name = Hx0
+End
+
+Boundary Condition 5
+  Name = Hx1
+End
+
+Boundary Condition 6
+  Name = Ix0
+End
+
+Boundary Condition 7
+  Name = Tx0_0
+End
+
+Boundary Condition 8
+  Name = Tx0_1
+End
+
+Boundary Condition 9
+  Name = Tx0_2
+End
+
+Boundary Condition 10
+  Name = Tx0_3
+End
+
+Boundary Condition 11
+  Name = Tx1_0
+End
+
+Boundary Condition 12
+  Name = Tx1_1
+End
+
+Boundary Condition 13
+  Name = Tx1_2
+End
+
+Boundary Condition 14
+  Name = Tx1_3
+End
+
+Boundary Condition 15
+  Name = Rx0
+End
+
+Boundary Condition 16
+  Name = Rx1
+End
+
+Boundary Condition 17
+  Name = bnry23
+End
+
+Boundary Condition 18
+  Name = bnry24
+End
+

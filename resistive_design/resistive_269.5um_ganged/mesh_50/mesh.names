@@ -1,0 +1,25 @@
+! ----- names for bodies -----
+$ airb = 1
+$ airt = 2
+$ OCA = 3
+$ spine = 4
+$ PVB = 5
+$ glass = 6
+! ----- names for boundaries -----
+$ airb_face = 7
+$ GND_face = 8
+$ airt_face = 9
+$ Hx0 = 10
+$ Hx1 = 11
+$ Tx0_0 = 12
+$ Tx0_1 = 13
+$ Tx0_2 = 14
+$ Tx0_3 = 15
+$ Tx1_0 = 16
+$ Tx1_1 = 17
+$ Tx1_2 = 18
+$ Tx1_3 = 19
+$ Rx0 = 20
+$ Rx1 = 21
+$ bnry22 = 22
+$ bnry23 = 23
